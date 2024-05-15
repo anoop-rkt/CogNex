@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
           marginTop: 60,
         }}
       >
-        <p style={{ fontSize: "30px", textAlign: "center", padding: "20px" }}>
+        <p style={{ fontSize: "25px", textAlign: "center", padding: "20px" }}>
           Built With love by
           <span>
             <Link
@@ -19,10 +20,9 @@ const Footer = () => {
               className="nav-link"
               to={"https://www.linkedin.com/in/anoop-kumar-4048791b9/"}
             >
-              Anoop Kumar
+              <FaLinkedin /> Anoop Kumar
             </Link>
           </span>
-          💘
         </p>
       </div>
     </footer>
