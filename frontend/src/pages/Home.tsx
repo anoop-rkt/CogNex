@@ -16,8 +16,7 @@ const Home = () => {
                 <img className="image-inverted rotate" src="openai.png" alt="openai" style={{ width: isBelowMd ? "15%" : "10%", margin: "auto" }} />
             </Box>
             <Box sx={{ display: "flex", width: "100%", mx: "auto" }}>
-                <img src="chat.png" alt="chatbot" style={{ display: "flex", width: isBelowMd ? "80%" : "60%", margin: "auto", borderRadius: 20, boxShadow: "-5px -5px 105px #64f3d5", marginTop: 20, marginBottom: 20 }} />
-
+                <img src="chat.png" alt="chatbot" style={{ display: "flex", width: isBelowMd ? "80%" : "60%", margin: "auto", borderRadius: 20, boxShadow: "-5px -5px 85px #64f3d5", marginTop: 20, marginBottom: 20 }} />
             </Box>
         </Box>
         <Footer />
