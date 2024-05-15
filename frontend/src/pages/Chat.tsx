@@ -63,6 +63,13 @@ const Chat = () => {
         }
     }, [auth])
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            handleSubmit();
+        }
+    };
+
     return (
         <Box sx={{ display: "flex", flex: 1, width: "100%", height: "100%", mt: 3, gap: 3 }}>
             <Box sx={{ display: { md: "flex", xs: "none", sm: "none" }, flex: 0.2, flexDirection: "column" }}>
@@ -93,7 +100,7 @@ const Chat = () => {
                 </Box>
                 <div style={{ width: "100%", borderRadius: 8, backgroundColor: "rgb(17,27,39)", display: "flex", margin: "auto" }}>
                     {" "}
-                    <input ref={inputRef} type="text" style={{ width: "100%", backgroundColor: "transparent", padding: "18px", border: "none", outline: "none", color: "white", fontSize: "16px" }} />
+                    <input ref={inputRef} type="text" style={{ width: "100%", backgroundColor: "transparent", padding: "18px", border: "none", outline: "none", color: "white", fontSize: "16px" }} onKeyDown={handleKeyDown} />
                     <IconButton onClick={handleSubmit} sx={{ ml: "auto", color: "white", mx: 1 }} ><IoMdSend /></IconButton>
                 </div>
             </Box>
