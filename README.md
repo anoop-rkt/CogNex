@@ -10,7 +10,6 @@ CogNex - Chat is an advanced conversational AI project designed to generate chat
 - Express
 - React + Vite
 - Node
-- TailwindCSS 
 
 ## <a name="features">🔋 Features</a>
 
