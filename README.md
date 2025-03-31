@@ -1,91 +1,36 @@
 
-# CogNex - GPT
+## <a name="introduction">🤖 Introduction</a>
 
-CogNex is an advanced conversational AI project designed to generate chat messages dynamically, akin to ChatGPT. By harnessing the cutting-edge capabilities of OpenAI's GPT-3.5 Turbo model, CogNex facilitates seamless and contextually relevant conversations across various domains. Whether it's assisting users with inquiries, providing recommendations, or engaging in informative exchanges, CogNex empowers applications with human-like conversational abilities.
+CogNex is an AI conversational project designed to generate chat messages dynamically, akin to ChatGPT. By harnessing the cutting-edge capabilities of OpenAI's GPT-3.5 Turbo model, CogNex facilitates seamless and contextually relevant conversations across various domains. Whether it's assisting users with inquiries, providing recommendations, or engaging in informative exchanges, CogNex empowers applications with human-like conversational abilities.
 
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
+- TypeScript
+- MongoDB
+- Express
+- React + Vite
+- Node
 
-## API Reference
+## <a name="features">🔋 Features</a>
 
+👉 **OpenAI GPT-3.5 Turbo** Integration: Harness the full power of OpenAI's latest GPT model for intelligent conversation generation.
 
+👉 **JWT & Cookie Authentication** : Ensures secure user authentication, protecting user data and privacy.
 
-#### Sign Up user
+👉 **Context API**: Utilize the Context API for efficient management of authentication within the ReactJS application.
 
-```http
-  POST /api/v1/user/signup
-```
+👉 **Material UI** Styling: Employ Material UI for beautifully styled components, ensuring a sleek and modern user interface.
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`      | `string` | **Required**.Name of the user |
-| `email`      | `string` | **Required**.Email of the user |
-| `password`      | `string` | **Required**.Password of the user |
+👉 **MongoDB** Database: Store user data securely using MongoDB, providing scalability and reliability.
 
-#### Login user
+👉 **TypeScript + ReactJS**: Leverage TypeScript for strong typing and enhanced code readability within the ReactJS application.
 
-```http
-  POST /api/v1/user/login
-```
+👉 **ExpressJS** : Build a robust backend with ExpressJS, providing a scalable and performant server environment.
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `email`      | `string` | **Required**.Email of the user |
-| `password`      | `string` | **Required**.Password of the user |
+👉 **NodeJS** Runtime Environment: Utilize NodeJS for the project's runtime environment, offering flexibility and efficiency.
 
-#### Check Authentication Status
+👉 **Responsive UI/UX**: A seamless experience across devices with a user-friendly interface
 
-```http
-  GET /api/v1/user/auth-status
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `jwtData`      | `string` | **Required**.JWT token containing user data |
-
-#### Logout user
-
-```http
-  GET /api/v1/user/logout
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `jwtData`      | `string` | **Required**.JWT token containing user data |
-
-#### Create a New Chat
-
-```http
-  POST /api/v1/chat/new
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `jwtData`      | `string` | **Required**.JWT token containing user data |
-| `message`      | `string` | **Required**.Message content |
-
-#### Fetch All Chats
-
-```http
-  GET /api/v1/chat/all-chats
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `jwtData`      | `string` | **Required**.JWT token containing user data |
-
-#### Delete Chat
-
-```http
-  DELETE /api/v1/chat/delete
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `jwtData`      | `string` | **Required**.JWT token containing user data |
-
-## Authentication
- 
-Authentication is required to access these endpoints. Include your JWT token containing user data in the request body.
 
 ## Response Codes and Descriptions
 
@@ -116,34 +61,61 @@ All endpoints return data in JSON format. Below are the response codes used:
 | Chat Color | ![#004d56](https://via.placeholder.com/10/004d56?text=+) #004d56 |
 
 
+## <a name="quick-start">🤸 Quick Start</a>
 
-## Environment Variables
+Follow these steps to set up the project locally on your machine.
 
-To run this project, you will need to add the following environment variables to your .env file
+**Cloning the Repository**
 
-`PORT`
+```bash
+git clone https://github.com/anoop-rkt/CogNex-Chat.git
+```
 
-`OPEN_AI_SECRET`
+**Installation**
 
-`OPEN_AI_ORGANIZATION_ID`
+Install the project dependencies using npm:
 
-`MONGODB_URL`
+```bash
+npm run dev
+```
 
-`JWT_SECRET`
+**Set Up Environment Variables**
 
-`COOKIE_SECRET`
+Create a new file named `.env.local` in the root of your project and add the following content:
 
+```env
+PORT =
 
-## Features
+#OpenAI ChatGPT 
+OPEN_AI_SECRET=
+OPEN_AI_ORGANIZATION_ID=
 
-- **OpenAI GPT-3.5 Turbo** Integration: Harness the full power of OpenAI's latest GPT model for intelligent conversation generation.
-- **JWT & Cookie Authentication** : Ensures secure user authentication, protecting user data and privacy.
-- **Context API**: Utilize the Context API for efficient management of authentication within the ReactJS application.
-- **Material UI** Styling: Employ Material UI for beautifully styled components, ensuring a sleek and modern user interface.
-- **MongoDB** Database: Store user data securely using MongoDB, providing scalability and reliability.
-- **TypeScript + ReactJS**: Leverage TypeScript for strong typing and enhanced code readability within the ReactJS application.
-- **ExpressJS** : Build a robust backend with ExpressJS, providing a scalable and performant server environment.
-- **NodeJS** Runtime Environment: Utilize NodeJS for the project's runtime environment, offering flexibility and efficiency.
+# MongoDB
+MONGODB_URL=
+
+# JWT secret key
+JWT_SECRET=
+
+# Cookie secret key
+COOKIE_SECRET=
+```
+
+Replace the placeholder values with your actual respective account credentials. You can obtain these credentials by signing up on the [OpenAI API](https://platform.openai.com/), [MongoDB](https://www.mongodb.com/)
+
+**Running the Project**
+
+Navigate to the backend folder and run the backend server:
+```bash
+npm run dev
+```
+Backend server is running on port 5000. 
+
+Navigate to the frontend folder, and run the frontend development server:
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173/) in your browser to view the project.
 
 
 ## 🚀 About Me
