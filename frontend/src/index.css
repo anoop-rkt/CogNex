@@ -42,3 +42,40 @@ body {
     transform: rotate(359deg);
   }
 }
+
+.pulse-glow {
+  animation: pulse 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 0.5rem rgba(100, 243, 213, 0.3));
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(100, 243, 213, 0.3));
+  }
+  50% {
+    transform: scale(1.10);
+    filter: drop-shadow(0 0 20px rgba(100, 243, 213, 0.8));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(100, 243, 213, 0.3));
+  }
+}
+
+.mini-pulse {
+  animation: mini-pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 5px rgba(100, 243, 213, 0.5);
+}
+
+@keyframes mini-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(100, 243, 213, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(100, 243, 213, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(100, 243, 213, 0.5);
+  }
+}

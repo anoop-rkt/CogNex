@@ -13,7 +13,7 @@ const Home = () => {
             </Box>
             <Box sx={{ width: "100%", display: "flex", flexDirection: { md: "row", xs: "column", sm: "column" }, gap: 5, my: 10 }}>
                 <img src="robot.png" alt="robot" style={{ width: isBelowMd ? "25%" : "15%", margin: "auto" }} />
-                <img className="image-inverted rotate" src="openai.png" alt="openai" style={{ width: isBelowMd ? "15%" : "10%", margin: "auto" }} />
+                <img className="pulse-glow" src="cognex.png" alt="cognex" style={{ width: isBelowMd ? "15%" : "10%", margin: "auto" }} />
             </Box>
             <Box sx={{ display: "flex", width: "100%", mx: "auto" }}>
                 <img src="chat.png" alt="chatbot" style={{ display: "flex", width: isBelowMd ? "80%" : "60%", margin: "auto", borderRadius: 20, boxShadow: "-5px -5px 85px #64f3d5", marginTop: 20, marginBottom: 20 }} />

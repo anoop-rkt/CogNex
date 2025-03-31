@@ -32,8 +32,16 @@ const ChatItem = ({ role, content }: { role: "user" | "assistant", content: stri
 
     return role == "assistant" ? (
         <Box sx={{ display: "flex", p: 1.5, bgcolor: "#004d5612", my: 0.5, gap: 1.5, borderRadius: 2, height: "auto", alignItems: "flex-start" }}>
-            <Avatar sx={{ ml: 0, width: 30, height: 30 }}>
-                <img src="openai.png" alt="openai" width={"20px"} />
+            <Avatar 
+                sx={{ 
+                    ml: 0, 
+                    width: 25, 
+                    height: 25, 
+                    bgcolor: "#05101c",
+                    p: 0.75
+                }}
+            >
+                <img src="cognex.png" alt="cognex" width={"200%"} height={"150%"} style={{objectFit: "contain"}} />
             </Avatar>
             <Box>
                 {!messageBlocks && (
