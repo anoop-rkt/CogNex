@@ -1,7 +1,7 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-CogNex - Chat is an advanced conversational AI project designed to generate chat messages dynamically, akin to ChatGPT. By harnessing the cutting-edge capabilities of OpenAI's GPT-3.5 Turbo model, CogNex facilitates seamless and contextually relevant conversations across various domains. Whether it's assisting users with inquiries, providing recommendations, or engaging in informative exchanges, CogNex empowers applications with human-like conversational abilities.
+CogNex is an AI conversational project designed to generate chat messages dynamically, akin to ChatGPT. By harnessing the cutting-edge capabilities of OpenAI's GPT-3.5 Turbo model, CogNex facilitates seamless and contextually relevant conversations across various domains. Whether it's assisting users with inquiries, providing recommendations, or engaging in informative exchanges, CogNex empowers applications with human-like conversational abilities.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
