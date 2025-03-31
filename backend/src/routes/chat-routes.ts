@@ -1,21 +1,34 @@
 import { Router } from "express";
 import { verifyToken } from "../utils/token-manager.js";
 import { chatCompletionValidator, validate } from "../utils/validators.js";
-import { deleteChats, generateChatCompletion, sendChatsToUser } from "../controllers/chat-controllers.js";
+import { 
+    createNewChat, 
+    deleteChatSession, 
+    generateChatCompletion, 
+    sendChatsToUser,
+    updateChatTitle 
+} from "../controllers/chat-controllers.js";
 
 //Protected API
 const chatRoutes = Router()
-chatRoutes.post("/new", async (req, res, next) => {
-    try {
-        await validate(chatCompletionValidator)(req as any, res as any, next);
-        await verifyToken(req, res, next);
-        await generateChatCompletion(req as any, res as any, next);
-    } catch (err) {
-        next(err);
-    }
-});
 
+// Create new chat session
+chatRoutes.post("/new-session", verifyToken, createNewChat);
+
+// Apply validation and token verification before the chat completion
+chatRoutes.post("/new", 
+    validate(chatCompletionValidator),
+    verifyToken,
+    generateChatCompletion
+);
+
+// Get all chat sessions
 chatRoutes.get("/all-chats", verifyToken, sendChatsToUser);
-chatRoutes.delete("/delete", verifyToken, deleteChats);
+
+// Delete a specific chat session
+chatRoutes.delete("/session/:sessionId", verifyToken, deleteChatSession);
+
+// Update chat session title
+chatRoutes.patch("/session/:sessionId/title", verifyToken, updateChatTitle);
 
 export default chatRoutes

@@ -27,8 +27,17 @@ export const checkAuthStatus = async () => {
     return data
 }
 
-export const sendChatRequest = async (message: string) => {
-    const res = await axios.post("/chat/new", { message })
+export const createNewChatSession = async () => {
+    const res = await axios.post("/chat/new-session")
+    if (res.status !== 201) {
+        throw new Error("Unable to create new chat session")
+    }
+    const data = await res.data
+    return data
+}
+
+export const sendChatRequest = async (message: string, sessionId: string) => {
+    const res = await axios.post("/chat/new", { message, sessionId })
     if (res.status !== 200) {
         throw new Error("Unable to send chat")
     }
@@ -45,10 +54,19 @@ export const getUserChats = async () => {
     return data
 }
 
-export const deleteUserChats = async () => {
-    const res = await axios.delete("/chat/delete")
+export const deleteChatSession = async (sessionId: string) => {
+    const res = await axios.delete(`/chat/session/${sessionId}`)
     if (res.status !== 200) {
-        throw new Error("Unable to delete chats")
+        throw new Error("Unable to delete chat session")
+    }
+    const data = await res.data
+    return data
+}
+
+export const updateChatTitle = async (sessionId: string, title: string) => {
+    const res = await axios.patch(`/chat/session/${sessionId}/title`, { title })
+    if (res.status !== 200) {
+        throw new Error("Unable to update chat title")
     }
     const data = await res.data
     return data

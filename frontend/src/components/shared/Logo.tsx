@@ -24,7 +24,7 @@ const Logo = () => {
                 textShadow: "2px 2px 20px #000",
                 display: { md: "block", sm: "none", xs: "none" },
             }}>
-                <span style={{ fontSize: "20px" }}>CogNex</span>-GPT
+                <span style={{ fontSize: "20px" }}>CogNex</span>
             </Typography>
         </div>
     )
